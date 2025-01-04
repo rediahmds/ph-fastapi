@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"ms-python.black-formatter", 
+		"ms-python.python", 
+		"ms-python.vscode-pylance",
+		"donjayamanne.python-environment-manager",
+		"KevinRose.vsc-python-indent"
+	]
+}
