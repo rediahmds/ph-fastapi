@@ -7,7 +7,7 @@ from src.databases.connection_manager import get_db
 router = APIRouter()
 
 
-@router.post("/ph")
+@router.post("/ph", status_code=201)
 async def create_ph(request: PhSchema, db: Session = Depends(get_db)):
     by_esp = PhModel(ph=request.ph, result=request.result)
     db.add(by_esp)
