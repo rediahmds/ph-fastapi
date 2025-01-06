@@ -4,6 +4,7 @@
 		"ms-python.python", 
 		"ms-python.vscode-pylance",
 		"donjayamanne.python-environment-manager",
-		"KevinRose.vsc-python-indent"
+		"KevinRose.vsc-python-indent",
+		"ritwickdey.LiveServer"
 	]
 }

@@ -23,7 +23,7 @@ These instructions will get you a copy of the project up and running on your loc
 - SQLite3. You can download it [here](https://sqlitebrowser.org/dl/).
 
 > [!TIP]
-> It is recommended to use Python 3.12.3 as it the version used in this project.
+> It is recommended to use [Python 3.12.3](https://www.python.org/downloads/release/python-3123/) as it the version used in this project.
 
 ### Installing
 
