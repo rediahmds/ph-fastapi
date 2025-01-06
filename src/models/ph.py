@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, Float, String
+from datetime import datetime
+from sqlalchemy import Column, Integer, Float, String, DateTime
 from src.databases.db import Base
 
 
@@ -8,9 +9,5 @@ class PhModel(Base):
     id = Column(Integer, primary_key=True)
     ph = Column(Float)
     result = Column(String)
-
-
-# meta = MetaData()
-# ph_table = Table(PhModel.__tablename__, meta, PhModel.id, PhModel.ph, PhModel.result)
-
-# meta.create_all(bind=engine)
+    created_at = Column(DateTime, default=datetime.now)
+    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
