@@ -13,5 +13,5 @@ class MockPh:
             return "Tak Aman"
 
     def generate_random_ph(self):
-        ph = round(random.uniform(0, 14), 2)
+        ph = round(random.uniform(5, 8), 2)
         return ph

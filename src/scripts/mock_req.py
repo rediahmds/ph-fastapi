@@ -1,5 +1,5 @@
 import time
-from src.scripts.mock_ph import MockPh
+from mock_ph import MockPh
 import requests
 
 

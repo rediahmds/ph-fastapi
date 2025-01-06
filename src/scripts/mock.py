@@ -1,4 +1,4 @@
-from src.scripts.mock_req import MockPhRequest
+from mock_req import MockPhRequest
 
 
 mocker = MockPhRequest()
