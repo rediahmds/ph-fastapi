@@ -7,6 +7,14 @@ from src.databases.connection_manager import get_db
 router = APIRouter()
 
 
+@router.get("/ph-latest")
+async def get_latest(limit: int = 20, db: Session = Depends(get_db)):
+    latest_list = (
+        db.query(PhModel).order_by(PhModel.created_at.desc()).limit(limit).all()
+    )
+    return latest_list
+
+
 @router.post("/ph", status_code=201)
 async def create_ph(request: PhSchema, db: Session = Depends(get_db)):
     by_esp = PhModel(ph=request.ph, result=request.result)
