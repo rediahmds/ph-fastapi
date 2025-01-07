@@ -1,8 +1,8 @@
 from fastapi import Depends, APIRouter
-from src.schemas.ph import PhSchema
-from src.models.ph import PhModel
+from schemas.ph import PhSchema
+from models.ph import PhModel
 from sqlalchemy.orm import Session
-from src.databases.connection_manager import get_db
+from databases.connection_manager import get_db
 
 router = APIRouter()
 
