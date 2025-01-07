@@ -86,25 +86,31 @@ pip3 install -r requirements.txt
 
 Run the server using the following command:
 
+- On Windows:
+
+```powershell
+python .\src\main.py
+```
+
+- On macOS and Linux:
+
 ```bash
-uvicorn src.main:app --reload
+python3 ./src/main.py
 ```
 
 If the server is running successfully, you will see the following output:
 
 ```bash
-INFO:     Will watch for changes in these directories: ['/home/handsomeguy/Develop/py/ph-fastapi']
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [60866] using WatchFiles
-INFO:     Started server process [60869]
+INFO:     Started server process [2700]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 ```
 
-Now, you can access the server on [http://127.0.0.1:8000](http://127.0.0.1:8000) using a browser.
+Now, you can access the server on [http://localhost](http://localhost) using a browser.
 
 ## API Documentation
 
-To access the API documentation, you can go to [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) using a browser. You will see the following page:
+To access the API documentation, you can go to [http://localhost/docs](http://localhost/docs) using a browser. You will see the following page:
 
 ![API Documentation](/docs/assets/api-docs.png)
