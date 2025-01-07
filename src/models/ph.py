@@ -1,6 +1,6 @@
 from datetime import datetime
 from sqlalchemy import Column, Integer, Float, String, DateTime
-from src.databases.db import Base
+from databases.db import Base
 
 
 class PhModel(Base):
