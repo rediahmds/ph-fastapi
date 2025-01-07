@@ -1,5 +1,5 @@
 // Configuration
-const API_URL = 'http://localhost:8000/ph-latest?limit=20'; // Replace with your API endpoint
+const API_URL = 'http://localhost/ph-latest?limit=20'; // Replace with your API endpoint
 const REFRESH_INTERVAL = 1000; // Refresh every 5 seconds
 
 // ApexCharts Configuration
@@ -48,7 +48,12 @@ async function fetchData() {
 }
 
 // Update chart with API data
+// Update chart with API data
 function updateChart(data) {
+  // Sort the data by 'created_at' in ascending order
+  data.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+
+  // Extract sorted categories and values
   const categories = data.map(item => item.created_at); // Extract labels for the x-axis
   const values = data.map(item => item.ph); // Extract values for the series
 
@@ -62,6 +67,7 @@ function updateChart(data) {
     data: values, // Update series data
   }]);
 }
+
 
 // Initial data fetch and periodic updates
 fetchData();
