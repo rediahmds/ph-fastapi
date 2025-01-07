@@ -1,14 +1,10 @@
-
-
-
-
 #include "WiFi.h"
 #include "Wire.h"
 // #include <BlynkSimpleEsp32.h>
 #include <LiquidCrystal_I2C.h>  // https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library.git
 #include <HTTPClient.h>
 #include <ArduinoJson.h>  // https://github.com/bblanchon/ArduinoJson.git
-#include <ESPping.h> // https://github.com/dvarrel/ESPping
+// #include <ESPping.h> // https://github.com/dvarrel/ESPping
 
 
 const int pH_pin = A13;
@@ -32,12 +28,12 @@ void setup() {
   if (IoT_mode) {
     initWiFi(SSID, PASSWORD);
     // Blynk.config(BLYNK_AUTH_TOKEN);
-    bool internetAvailability = Ping.ping("192.168.1.10", 3);
-    if (internetAvailability) {
-      Serial.println("[INFO] Internet Available");
-    } else {
-      ESP.restart();
-    }
+    // bool internetAvailability = Ping.ping("192.168.1.10", 3);
+    // if (internetAvailability) {
+    //   Serial.println("[INFO] Internet Available");
+    // } else {
+    //   ESP.restart();
+    // }
   }
   pinMode(pH_pin, INPUT);
 
@@ -79,7 +75,7 @@ void loop() {
   if (IoT_mode) {
     // Blynk.virtualWrite(V0, Po);
     // Blynk.virtualWrite(V1, status);
-    char* serverURL = "192.168.1.10:8000/ph";
+    char* serverURL = "http://192.168.1.10/ph";
     postPhToAPI(serverURL, Po, status);
   }
 
